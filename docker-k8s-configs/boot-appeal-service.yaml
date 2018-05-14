@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-appeal-service
+spec:
+  ports:
+  - port: 9501
+    targetPort: 9501
+    name: http
+  - port: 9502
+    targetPort: 9502
+    name: management
+  selector:
+    app: spring-boot-appeal
+  type: NodePort

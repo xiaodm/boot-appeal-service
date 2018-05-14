@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1 # for versions 1.7 - 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: spring-boot-appeal
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot-appeal
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: spring-boot-appeal
+    spec:
+      containers:
+      - name: spring-boot-appeal
+        image: deexiaoxdm/appeal-service:v1.0   # your image name here
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9501
+          name: server
+        - containerPort: 9502
+          name: management
