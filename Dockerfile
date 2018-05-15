@@ -10,7 +10,7 @@ ADD boot-appeal-service-0.0.1-SNAPSHOT.jar boot-appeal.jar
 # RUN命令是Dockerfile执行命令的核心部分。它接受命令作为参数并用于创建镜像。  
 RUN sh -c 'touch /boot-appeal.jar'  
   
-ENV命令用于设置环境变量。这些变量以”key=value”的形式存在，并可以在容器内被脚本或者程序调用。  
+# ENV命令用于设置环境变量。这些变量以”key=value”的形式存在，并可以在容器内被脚本或者程序调用。  
 ENV JAVA_OPTS=""  
   
 # ENTRYPOINT 帮助你配置一个容器使之可执行化  
